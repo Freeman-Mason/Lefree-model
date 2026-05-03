@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+
+.env
+!.env.example
+.venv/
+venv/
+
+Lefree-01-model/
+*/checkpoint-*/
+checkpoint-*/
+
+.cache/
+huggingface/
+
+*.log
