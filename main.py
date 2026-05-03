@@ -21,6 +21,13 @@ def load_env_file(path=".env"):
             os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
+def env_flag(name, default=False):
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.lower() in {"1", "true", "yes", "y"}
+
+
 def parse_args():
     load_env_file()
 
@@ -44,6 +51,9 @@ def parse_args():
     parser.add_argument("--gradient_checkpointing", action="store_true")
     parser.add_argument("--fp16", action="store_true")
     parser.add_argument("--bf16", action="store_true")
+    parser.add_argument("--push_to_hub", action="store_true", default=env_flag("PUSH_TO_HUB"))
+    parser.add_argument("--hub_model_id", default=os.getenv("HF_REPO_ID"))
+    parser.add_argument("--hub_private_repo", action="store_true", default=env_flag("HF_PRIVATE_REPO"))
     return parser.parse_args()
 
 

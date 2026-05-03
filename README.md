@@ -35,6 +35,29 @@ Change the model in `.env`:
 MODEL_NAME=Qwen/Qwen3-0.6B
 ```
 
+## Push To Hugging Face
+
+Set these in `.env`:
+
+```text
+HF_TOKEN=your_huggingface_token
+HF_REPO_ID=your-username/your-model-name
+PUSH_TO_HUB=true
+HF_PRIVATE_REPO=false
+```
+
+Then run:
+
+```powershell
+python main.py
+```
+
+Or push only when you choose:
+
+```powershell
+python main.py --push_to_hub --hub_model_id your-username/your-model-name
+```
+
 ## Run
 
 ```powershell

@@ -14,4 +14,6 @@ def train_model(model, tokenizer, tokenized_dataset, training_args):
     trainer.train()
     trainer.save_model(training_args.output_dir)
     tokenizer.save_pretrained(training_args.output_dir)
+    if training_args.push_to_hub:
+        trainer.push_to_hub()
     return trainer

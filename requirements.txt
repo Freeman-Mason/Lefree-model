@@ -3,3 +3,4 @@ datasets
 pandas
 openpyxl
 torch
+huggingface_hub

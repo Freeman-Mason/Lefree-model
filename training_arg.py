@@ -17,6 +17,9 @@ def build_training_args(args):
         seed=args.seed,
         fp16=args.fp16,
         bf16=args.bf16,
+        push_to_hub=args.push_to_hub,
+        hub_model_id=args.hub_model_id,
+        hub_private_repo=args.hub_private_repo,
     )
 
     try:
