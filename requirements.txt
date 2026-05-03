@@ -4,3 +4,5 @@ pandas
 openpyxl
 torch
 huggingface_hub
+sentencepiece
+tiktoken
